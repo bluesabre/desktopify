@@ -224,14 +224,20 @@ if [ "${IS_UBUNTU}" != "Ubuntu" ]; then
   exit 1
 fi
 
-# Check if we're running 20.04
+# Check if we're running a supported release
 CODENAME=$(lsb_release -cs)
 case ${CODENAME} in
     focal)
         # Do nothing, as this is a supported release.
         ;;
+    impish)
+        # Do nothing, as this is a supported release.
+        ;;
+    jammy)
+        # Do nothing, as this is a supported release.
+        ;;
     *)
-        echo "[!] This script is only intended to run on Ubuntu 20.04."
+        echo "[!] This script is only intended to run on Ubuntu 20.04, 21.10, or 22.04."
         exit 1
         ;;
 esac
