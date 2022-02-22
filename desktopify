@@ -16,6 +16,7 @@ function usage () {
   echo "  ubuntu-mate"
   echo "  ubuntu-studio"
   echo "  xubuntu"
+  echo "  xubuntu-core"
   echo
   echo "You can also pass the optional --oem option which will run a setup"
   echo "wizard on the next boot."
@@ -185,6 +186,10 @@ case "${DESKTOP_ENVIRONMENT}" in
   xubuntu)
     echo "[+] Specified Xubuntu desktop"
     DESKTOP_PACKAGES="xubuntu-desktop"
+    shift;;
+  xubuntu-core)
+    echo "[+] Specified Xubuntu Core desktop"
+    DESKTOP_PACKAGES="xubuntu-core"
     shift;;
   *)
     if [ -z "${DESKTOP_ENVIRONMENT}" ]; then
